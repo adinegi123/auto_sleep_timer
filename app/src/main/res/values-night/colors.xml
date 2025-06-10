@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    Light (Primary) -->
+    <color name="color_primary_light">#1CAB55</color>
+    <color name="color_primary_variant_light">#1CAB55</color>
+    <color name="color_on_primary_light">#A4F6AC</color>
+
+    <!--    Light (Brand Color) -->
+    <color name="color_secondary_light">#930F15</color>
+    <color name="color_secondary_variant_light">#930F15</color>
+    <color name="color_on_secondary_light">#E63C3C</color>
+
+    <!--    Dark (Primary) -->
+    <color name="color_primary_dark">#121212</color>
+    <color name="color_primary_variant_dark">#070A10</color>
+    <color name="color_on_primary">#332940</color>
+
+
+    <color name="background_color">#121212</color>
+    <color name="text_color">#FAFAFA</color>
+
+    <!--    Dark (Brand Color) -->
+    <color name="color_secondary_dark">#FF7597</color>
+    <color name="color_secondary_variant_dark">#FF0266</color>
+    <color name="color_on_secondary_dark">#332940</color>
+
+    <!--    Background colors -->
+    <color name="background_dark">#121212</color>
+    <color name="background_light">#FFFFFF</color>
+
+    <!--    Text colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_2">#FAFAFA</color>
+    <color name="black">#000000</color>
+    <color name="black_2">#1A1A1A</color>
+
+    <!--   Icon Tint color -->
+
+    <color name="dialogue_bg">#2F2F2F</color>
+
+    <color name="purple_500">#7547E9</color>
+    <color name="unselected_color">#412C7E</color>
+
+    <color name="gray">#BFBDBD</color>
+    <color name="gray_light">#E6E2E2</color>
+</resources>

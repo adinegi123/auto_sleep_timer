@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Auto Sleep Timer</string>
+    <string name="task_executed_successfully">Task Executed Successfully</string>
+    <string name="close">Close</string>
+</resources>

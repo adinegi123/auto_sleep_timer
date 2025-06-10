@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_three"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/ivSettings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/baseline_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        />
+
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="After how much time ?"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="85dp"
+        android:gravity="center"
+        android:fontFamily="@font/tektur_semibold"
+        android:textColor="@color/white_2"
+        android:textSize="25sp"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:gravity="center|center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvLabel"
+        android:layout_marginTop="40dp"
+        >
+
+        <NumberPicker
+            android:id="@+id/numberPickerHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/NumberPickerTheme"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hour"
+            android:textColor="@color/white_2"
+            android:layout_marginHorizontal="15dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/tektur_semibold"
+            />
+
+        <NumberPicker
+            android:id="@+id/numberPickerMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/NumberPickerTheme"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min"
+            android:textColor="@color/white_2"
+            android:textSize="12sp"
+            android:fontFamily="@font/tektur_semibold"
+            android:layout_marginStart="15dp"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutTimerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center|center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvLabel"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tvHour"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:textSize="30sp"
+            tools:text="00"
+            android:fontFamily="@font/tektur_semibold"
+            android:gravity="center"
+            android:textColor="@color/text_color"
+            app:layout_constraintBottom_toTopOf="@+id/hourDown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hourTop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:fontFamily="@font/tektur_semibold"
+            android:textColor="@color/text_color"
+            android:layout_marginHorizontal="15dp"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/tvMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:textSize="30sp"
+            tools:text="00"
+            android:fontFamily="@font/tektur_semibold"
+            android:textColor="@color/text_color"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/minute_Down_minute"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minute_Top_minute" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            android:fontFamily="@font/tektur_semibold"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            />
+        <TextView
+            android:id="@+id/tvSeconds"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:textSize="30sp"
+            tools:text="00"
+            android:fontFamily="@font/tektur_semibold"
+            android:textColor="@color/text_color"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/minute_Down_minute"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minute_Top_minute" />
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvStart"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_marginBottom="60dp"
+        android:textColor="@color/white_2"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:paddingVertical="7dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/tektur_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_marginBottom="60dp"
+        android:textColor="@color/white_2"
+        android:gravity="center"
+        android:paddingVertical="7dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/tektur_semibold"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

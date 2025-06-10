@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:background="@color/dialogue_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleep Timer"
+        android:textSize="25sp"
+        android:fontFamily="@font/tektur_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white_2"
+        />
+
+    <TextView
+        android:id="@+id/tvPermissionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Need your permissions to work"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="13sp"
+        android:fontFamily="@font/tektur_semibold"
+        android:textColor="@color/gray"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ringing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPermissionLabel"
+        android:layout_marginStart="40dp"
+        app:tint="@color/white_2"
+        android:layout_marginTop="30dp"
+        />
+
+    <TextView
+        android:id="@+id/tvNotificationPer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Permission"
+        app:layout_constraintStart_toEndOf="@id/ivNotification"
+        app:layout_constraintTop_toTopOf="@id/ivNotification"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/tektur_semibold"
+        android:textColor="@color/white_2"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvNotificationDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To keep app alive while in background"
+        android:textSize="12sp"
+        android:fontFamily="@font/tektur_semibold"
+        app:layout_constraintStart_toStartOf="@+id/tvNotificationPer"
+        app:layout_constraintTop_toBottomOf="@id/tvNotificationPer"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/gray"
+        />
+
+    <ImageView
+        android:id="@+id/ivDisplayOver"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:layout_constraintTop_toBottomOf="@id/ivNotification"
+        android:src="@drawable/display"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        app:tint="@color/white_2"
+        android:layout_marginStart="40dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvDisplayPerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display over other apps "
+        app:layout_constraintStart_toEndOf="@id/ivDisplayOver"
+        app:layout_constraintTop_toTopOf="@id/ivDisplayOver"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/tektur_semibold"
+        android:textColor="@color/white_2"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To stop running apps"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDisplayPerm"
+        app:layout_constraintTop_toBottomOf="@id/tvDisplayPerm"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/gray"
+        android:fontFamily="@font/tektur_semibold"
+        />
+
+    <TextView
+        android:id="@+id/tvAllow"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Allow Access"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:fontFamily="@font/tektur_semibold"
+        android:paddingVertical="7dp"
+        android:gravity="center"
+        android:background="@drawable/button_bg"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDisplayOver" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
