@@ -437,7 +437,7 @@ class MainActivity : AppCompatActivity() {
                 negativeAction = {}
 
             )
-            
+
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }

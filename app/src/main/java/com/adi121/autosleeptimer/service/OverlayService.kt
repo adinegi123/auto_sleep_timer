@@ -41,20 +41,35 @@ class OverlayService: Service() {
         return null
     }
 
+    companion object{
+        const val ACTION_STOP_SERVICE_DIRECT = "ACTION_STOP_SERVICE_DIRECT"
+    }
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
-        val hour=intent?.getStringExtra("hour")
-        val minute=intent?.getStringExtra("minute")
-
-        startForegroundService()
-
-        startTimer(hour.toString(),minute.toString()){
-            // timer ends
-            showOverLay()
-            requestAudioFocus()
+        if(intent?.action== ACTION_STOP_SERVICE_DIRECT){
             stopSelf()
+            countDownTimer?.cancel()
+            countDownTimer=null
+
+            val receiverIntent = Intent("TIMER_FINISH")
+            receiverIntent.putExtra("isFinish", true)
+            LocalBroadcastManager.getInstance(this@OverlayService).sendBroadcast(receiverIntent)
+        }else {
+
+            val hour = intent?.getStringExtra("hour")
+            val minute = intent?.getStringExtra("minute")
+
+            startForegroundService()
+
+            startTimer(hour.toString(), minute.toString()) {
+                // timer ends
+                showOverLay()
+                requestAudioFocus()
+                stopSelf()
 
 
+            }
         }
 
 
@@ -79,10 +94,21 @@ class OverlayService: Service() {
             PendingIntent.FLAG_IMMUTABLE
         )
 
+        val stopIntent = Intent(this,OverlayService::class.java)
+            .apply {
+                action= ACTION_STOP_SERVICE_DIRECT
+            }
+
+        val stopServicePendingIntent = PendingIntent.getService(this,5,
+            stopIntent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+
         val notification = NotificationCompat.Builder(this, channelId)
             .setContentTitle("Timer Running")
             .setContentText("Your countdown is active.")
             .setContentIntent(pendingIntent)
+            .addAction(R.drawable.baseline_stop,"Cancel",stopServicePendingIntent)
             .setSmallIcon(android.R.drawable.ic_lock_idle_alarm)
             .build()
 
@@ -111,17 +137,17 @@ class OverlayService: Service() {
         overLayView.findViewById<Button>(R.id.btnClose).setOnClickListener {
             windowsManager.removeView(overLayView)
             abandonAudioFocus()
-            //stopSelf()
+
         }
 
         if(SharedPrefs.getInstance(this)?.iSQuoteEnabled==true){
-         val textQuote = overLayView.findViewById<TextView>(R.id.tvQuote)
-         val textAuthor = overLayView.findViewById<TextView>(R.id.tvAuthor)
+            val textQuote = overLayView.findViewById<TextView>(R.id.tvQuote)
+            val textAuthor = overLayView.findViewById<TextView>(R.id.tvAuthor)
 
-         val quote = QuotesData.quotes[Random.nextInt(0,QuotesData.quotes.size-1)]
+            val quote = QuotesData.quotes[Random.nextInt(0,QuotesData.quotes.size-1)]
 
-         textQuote.text=quote.text
-         textAuthor.text= quote.author ?: "Unknown"
+            textQuote.text=quote.text
+            textAuthor.text= quote.author ?: "Unknown"
 
         }
 
